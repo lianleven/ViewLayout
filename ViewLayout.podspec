@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ViewLayout'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Use categories to easily use NSLayoutConstrain. '
 
 # This description is used to generate tags and improve search results.
@@ -17,7 +17,8 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Use categories to easily use NSLayoutConstrain. '
+  s.description      = 'Use categories to easily use NSLayoutConstrain. 
+Quickly build your own UI framework without relying on third parties'
 
   s.homepage         = 'https://github.com/lianleven/ViewLayout'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
