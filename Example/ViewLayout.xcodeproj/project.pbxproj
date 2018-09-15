@@ -17,6 +17,8 @@
 		5C4DC340214D60E9002777EC /* LLExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC33F214D60E9002777EC /* LLExampleViewController.m */; };
 		5C4DC344214D61AC002777EC /* LLExampleBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC343214D61AC002777EC /* LLExampleBasicView.m */; };
 		5C4DC347214D71CD002777EC /* LLExampleUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC346214D71CD002777EC /* LLExampleUpdateView.m */; };
+		5C4DC34A214D82AD002777EC /* ViewLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC348214D82AC002777EC /* ViewLayout.podspec */; };
+		5C4DC34B214D82AD002777EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC349214D82AC002777EC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5C4DC343214D61AC002777EC /* LLExampleBasicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLExampleBasicView.m; sourceTree = "<group>"; };
 		5C4DC345214D71CD002777EC /* LLExampleUpdateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLExampleUpdateView.h; sourceTree = "<group>"; };
 		5C4DC346214D71CD002777EC /* LLExampleUpdateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLExampleUpdateView.m; sourceTree = "<group>"; };
+		5C4DC348214D82AC002777EC /* ViewLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ViewLayout.podspec; path = ../ViewLayout.podspec; sourceTree = "<group>"; };
+		5C4DC349214D82AC002777EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		5C4DC337214D5401002777EC /* ViewLayout */ = {
 			isa = PBXGroup;
 			children = (
+				5C4DC349214D82AC002777EC /* README.md */,
+				5C4DC348214D82AC002777EC /* ViewLayout.podspec */,
 				5C4DC33B214D547A002777EC /* UIView+layout.h */,
 				5C4DC33C214D547A002777EC /* UIView+layout.m */,
 			);
@@ -167,7 +173,9 @@
 			files = (
 				5C4DC32E214D53D3002777EC /* LaunchScreen.storyboard in Resources */,
 				5C4DC32B214D53D3002777EC /* Assets.xcassets in Resources */,
+				5C4DC34B214D82AD002777EC /* README.md in Resources */,
 				5C4DC329214D53D1002777EC /* Main.storyboard in Resources */,
+				5C4DC34A214D82AD002777EC /* ViewLayout.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

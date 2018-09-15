@@ -20,7 +20,7 @@ pod 'ViewLayout'
 </div>
 
 ## Usage & Example
-
+Example 是直接用 Masonry 的 UI 样式
 在使用的文件中导入头文件
 
 ```objective-c
