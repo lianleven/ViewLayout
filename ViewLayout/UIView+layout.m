@@ -22,11 +22,12 @@
 }
 - (NSLayoutConstraint *)layout_heightEqualToView:(UIView *)view
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeHeight multiplier:1.0f constant:0.0f];
-    [superview addConstraint:constraint];
+    NSLayoutConstraint *constraint = [self layout_height:0 equalToView:view relation:NSLayoutRelationEqual];
+    return constraint;
+}
+- (NSLayoutConstraint *)layout_height:(CGFloat)constant equalToView:(UIView *)view relation:(NSLayoutRelation)relation
+{
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeHeight relation:relation toView:view toAttribute:NSLayoutAttributeHeight multiplier:1.0];
     return constraint;
 }
 #pragma mark - layout width
@@ -41,25 +42,22 @@
 }
 - (NSLayoutConstraint *)layout_widthEqualToView:(UIView *)view
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeWidth multiplier:1.0f constant:0.0f];
-    [superview addConstraint:constraint];
+    NSLayoutConstraint *constraint = [self layout_width:0 equalToView:view relation:NSLayoutRelationEqual];
+    return constraint;
+}
+- (NSLayoutConstraint *)layout_width:(CGFloat)constant equalToView:(UIView *)view relation:(NSLayoutRelation)relation
+{
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeWidth relation:relation toView:view toAttribute:NSLayoutAttributeWidth multiplier:1.0];
     return constraint;
 }
 #pragma mark - size
 - (void)layout_size:(CGSize)size
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
     [self layout_height:size.height];
     [self layout_width:size.width];
 }
 - (void)layout_sizeEqualToView:(UIView *)view
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
     [self layout_heightEqualToView:view];
     [self layout_widthEqualToView:view];
 }
@@ -90,42 +88,88 @@
 }
 
 #pragma mark - layout align
-- (NSLayoutConstraint *)layout_top:(CGFloat)top toView:(UIView *)view
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeTop multiplier:1.0 constant:top];
-    [superview addConstraint:constraint];
+    NSLayoutConstraint *constraint = [self layout_top:constant toView:view toAttribute:NSLayoutAttributeTop];
+    return constraint;
+}
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_top:constant relation:NSLayoutRelationEqual toView:view toAttribute:toAttribute];
     return constraint;
 }
 
-- (NSLayoutConstraint *)layout_bottom:(CGFloat)bottom toView:(UIView *)view
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:bottom];
-    [superview addConstraint:constraint];
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeTop relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
     return constraint;
 }
 
-- (NSLayoutConstraint *)layout_left:(CGFloat)left toView:(UIView *)view
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toView:(UIView *)view
 {
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:left];
-    [superview addConstraint:constraint];
+    NSLayoutConstraint *constraint = [self layout_bottom:constant toView:view toAttribute:NSLayoutAttributeBottom];
     return constraint;
 }
 
-- (NSLayoutConstraint *)layout_right:(CGFloat)right toView:(UIView *)view
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_bottom:constant relation:NSLayoutRelationEqual toView:view toAttribute:toAttribute];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeBottom relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant toView:(UIView *)view
+{
+    NSLayoutConstraint *constraint = [self layout_left:constant toView:view toAttribute:NSLayoutAttributeLeft];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_left:constant relation:NSLayoutRelationEqual toView:view toAttribute:toAttribute];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeLeft relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant toView:(UIView *)view
+{
+    NSLayoutConstraint *constraint = [self layout_right:constant toView:view toAttribute:NSLayoutAttributeRight];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_right:constant relation:NSLayoutRelationEqual toView:view toAttribute:toAttribute];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute
+{
+    NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeRight relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
+    return constraint;
+}
+
+- (NSLayoutConstraint *)layout_constant:(CGFloat)constant
+                              attribute:(NSLayoutAttribute)attribute
+                               relation:(NSLayoutRelation)relation
+                                 toView:(UIView *)view
+                            toAttribute:(NSLayoutAttribute)toAttribute
+                             multiplier:(CGFloat)multiplier
 {
     UIView *superview = self.superview;
     NSAssert(superview != nil, @"superview is nil");
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeRight multiplier:1.0 constant:right];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:attribute relatedBy:relation toItem:view attribute:toAttribute multiplier:multiplier constant:constant];
     [superview addConstraint:constraint];
     return constraint;
 }
