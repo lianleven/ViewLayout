@@ -14,12 +14,12 @@ pod 'ViewLayout'
 ## ScreenShot
 <div align = "center"> 
 <img src="ScreenShot/IMG_0086.JPG" width="200" />
-<img src="ScreenShot/IMG_0089.JPG" width="200" />
+<!--<img src="ScreenShot/IMG_0089.JPG" width="200" />-->
 <img src="ScreenShot/IMG_0087.JPG" width="200" />
-<img src="ScreenShot/IMG_0088.JPG" width="200" />
+<!--<img src="ScreenShot/IMG_0088.JPG" width="200" />-->
 </div>
 
-## Usage
+## Usage & Example
 
 在使用的文件中导入头文件
 
@@ -28,10 +28,24 @@ pod 'ViewLayout'
 
 ```
 
-```objective-c
 
+```objective-c
+[self.view addSubview:self.tableView];
+[self.tableView layout_fill];
+```
+**LLExampleBasicView** 文件
+
+```objective-c
+[greenView layout_top:padding relation:NSLayoutRelationGreaterThanOrEqual toView:superview toAttribute:NSLayoutAttributeTop];
+[greenView layout_left:padding toView:superview];
+[greenView layout_bottom:-padding toView:blueView toAttribute:NSLayoutAttributeTop];
+[greenView layout_right:-padding toView:redView toAttribute:NSLayoutAttributeLeft];
+[greenView layout_widthEqualToView:redView];
+[greenView layout_heightEqualToView:redView];
+[greenView layout_heightEqualToView:blueView];
 
 ```
+
 
 ## License
 
