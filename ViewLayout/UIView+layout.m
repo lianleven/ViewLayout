@@ -205,5 +205,22 @@
     [self layout_fillWidth];
     [self layout_fillHeight];
 }
+#pragma mark - remove
+- (void)removeAllConstraints{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    NSMutableArray *deactivate = @[].mutableCopy;
+    for (NSLayoutConstraint *constraint in superview.constraints) {
+        if (constraint.firstItem && constraint.firstItem == self) {
+            [deactivate addObject:constraint];
+        }
+    }
+    if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0) {
+        [NSLayoutConstraint deactivateConstraints:deactivate];
+    }else{
+        [superview removeConstraints:deactivate];
+    }
+    
+}
 
 @end

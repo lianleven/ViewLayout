@@ -11,6 +11,7 @@
 #import "LLExampleViewController.h"
 #import "LLExampleBasicView.h"
 #import "LLExampleUpdateView.h"
+#import "LLExampleRemakeView.h"
 
 static NSString * const kLLCellReuseIdentifier = @"kLLCellReuseIdentifier";
 
@@ -37,6 +38,8 @@ UITableViewDataSource
     self.exampleControllers = @[
         [[LLExampleViewController alloc] initWithTitle:@"Basic" viewClass:LLExampleBasicView.class],
         [[LLExampleViewController alloc] initWithTitle:@"Update Constraints" viewClass:LLExampleUpdateView.class],
+        [[LLExampleViewController alloc] initWithTitle:@"Remake Constraints" viewClass:LLExampleRemakeView.class],
+        
     ];
     
 }

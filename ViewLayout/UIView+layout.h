@@ -63,5 +63,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)layout_fillHeight;
 - (void)layout_fill;
 
+#pragma mark - remove
+- (void)removeAllConstraints;
+
 @end
 NS_ASSUME_NONNULL_END
