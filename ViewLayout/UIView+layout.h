@@ -1,5 +1,5 @@
 //
-//  UIView+layout.h
+//  UIView+Layout.h
 //  ViewLayout
 //
 //  Created by LianLeven on 2018/9/15.
@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface UIView (layout)
+@interface UIView (Layout)
 
 // height
 - (NSLayoutConstraint *)layout_height:(CGFloat)height;
@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //
 #pragma mark - top, bottom, left, right
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant;
 - (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view;
 - (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
 - (NSLayoutConstraint *)layout_top:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;

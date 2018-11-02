@@ -1,14 +1,14 @@
 //
-//  UIView+layout.m
+//  UIView+Layout.m
 //  ViewLayout
 //
 //  Created by LianLeven on 2018/9/15.
 //  Copyright © 2018年 lianleven. All rights reserved.
 //
 
-#import "UIView+layout.h"
+#import "UIView+Layout.h"
 
-@implementation UIView (layout)
+@implementation UIView (Layout)
 
 #pragma mark - layout height
 - (NSLayoutConstraint *)layout_height:(CGFloat)height
@@ -88,6 +88,13 @@
 }
 
 #pragma mark - layout align
+#pragma mark - top
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    NSLayoutConstraint *constraint = [self layout_top:constant toView:superview toAttribute:NSLayoutAttributeTop];
+    return constraint;
+}
 - (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view
 {
     NSLayoutConstraint *constraint = [self layout_top:constant toView:view toAttribute:NSLayoutAttributeTop];
@@ -105,6 +112,13 @@
     return constraint;
 }
 
+#pragma mark - bottom
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    NSLayoutConstraint *constraint = [self layout_bottom:constant toView:superview toAttribute:NSLayoutAttributeBottom];
+    return constraint;
+}
 - (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toView:(UIView *)view
 {
     NSLayoutConstraint *constraint = [self layout_bottom:constant toView:view toAttribute:NSLayoutAttributeBottom];
@@ -122,7 +136,13 @@
     NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeBottom relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
     return constraint;
 }
-
+#pragma mark - left
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    NSLayoutConstraint *constraint = [self layout_left:constant toView:superview toAttribute:NSLayoutAttributeLeft];
+    return constraint;
+}
 - (NSLayoutConstraint *)layout_left:(CGFloat)constant toView:(UIView *)view
 {
     NSLayoutConstraint *constraint = [self layout_left:constant toView:view toAttribute:NSLayoutAttributeLeft];
@@ -140,7 +160,13 @@
     NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeLeft relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
     return constraint;
 }
-
+#pragma mark - right
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    NSLayoutConstraint *constraint = [self layout_right:constant toView:superview toAttribute:NSLayoutAttributeRight];
+    return constraint;
+}
 - (NSLayoutConstraint *)layout_right:(CGFloat)constant toView:(UIView *)view
 {
     NSLayoutConstraint *constraint = [self layout_right:constant toView:view toAttribute:NSLayoutAttributeRight];
@@ -158,23 +184,7 @@
     NSLayoutConstraint *constraint = [self layout_constant:constant attribute:NSLayoutAttributeRight relation:relation toView:view toAttribute:toAttribute multiplier:1.0];
     return constraint;
 }
-
-- (NSLayoutConstraint *)layout_constant:(CGFloat)constant
-                              attribute:(NSLayoutAttribute)attribute
-                               relation:(NSLayoutRelation)relation
-                                 toView:(UIView *)view
-                            toAttribute:(NSLayoutAttribute)toAttribute
-                             multiplier:(CGFloat)multiplier
-{
-    UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
-    self.translatesAutoresizingMaskIntoConstraints = NO;
-    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:attribute relatedBy:relation toItem:view attribute:toAttribute multiplier:multiplier constant:constant];
-    [superview addConstraint:constraint];
-    return constraint;
-}
-
-
+#pragma mark - fill & insets
 - (void)layout_edgeInsets:(UIEdgeInsets)edgeInsets{
     UIView *superview = self.superview;
     NSAssert(superview != nil, @"superview is nil");
@@ -183,7 +193,11 @@
     [self layout_top:edgeInsets.top toView:superview];
     [self layout_bottom:edgeInsets.bottom toView:superview];
 }
-
+- (void)layout_fill
+{
+    [self layout_fillWidth];
+    [self layout_fillHeight];
+}
 - (void)layout_fillWidth
 {
     UIView *superview = self.superview;
@@ -200,11 +214,7 @@
     [self layout_bottom:0 toView:superview];
 }
 
-- (void)layout_fill
-{
-    [self layout_fillWidth];
-    [self layout_fillHeight];
-}
+
 #pragma mark - remove
 - (void)removeAllConstraints{
     UIView *superview = self.superview;
@@ -221,6 +231,22 @@
         [superview removeConstraints:deactivate];
     }
     
+}
+
+#pragma mark - Private Method
+- (NSLayoutConstraint *)layout_constant:(CGFloat)constant
+                              attribute:(NSLayoutAttribute)attribute
+                               relation:(NSLayoutRelation)relation
+                                 toView:(UIView *)view
+                            toAttribute:(NSLayoutAttribute)toAttribute
+                             multiplier:(CGFloat)multiplier
+{
+    UIView *superview = self.superview;
+    NSAssert(superview != nil, @"superview is nil");
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:attribute relatedBy:relation toItem:view attribute:toAttribute multiplier:multiplier constant:constant];
+    [superview addConstraint:constraint];
+    return constraint;
 }
 
 @end

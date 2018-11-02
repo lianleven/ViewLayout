@@ -13,13 +13,13 @@
 		5C4DC32B214D53D3002777EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC32A214D53D3002777EC /* Assets.xcassets */; };
 		5C4DC32E214D53D3002777EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC32C214D53D3002777EC /* LaunchScreen.storyboard */; };
 		5C4DC331214D53D3002777EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC330214D53D3002777EC /* main.m */; };
-		5C4DC33D214D547A002777EC /* UIView+layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC33C214D547A002777EC /* UIView+layout.m */; };
 		5C4DC340214D60E9002777EC /* LLExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC33F214D60E9002777EC /* LLExampleViewController.m */; };
 		5C4DC344214D61AC002777EC /* LLExampleBasicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC343214D61AC002777EC /* LLExampleBasicView.m */; };
 		5C4DC347214D71CD002777EC /* LLExampleUpdateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC346214D71CD002777EC /* LLExampleUpdateView.m */; };
 		5C4DC34A214D82AD002777EC /* ViewLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC348214D82AC002777EC /* ViewLayout.podspec */; };
 		5C4DC34B214D82AD002777EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C4DC349214D82AC002777EC /* README.md */; };
 		5C4DC34E214DEC43002777EC /* LLExampleRemakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC34D214DEC43002777EC /* LLExampleRemakeView.m */; };
+		5CF06D7C218BFEBC008DE60D /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF06D7A218BFEBC008DE60D /* UIView+Layout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,6 @@
 		5C4DC32D214D53D3002777EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C4DC32F214D53D3002777EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4DC330214D53D3002777EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5C4DC33B214D547A002777EC /* UIView+layout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+layout.h"; sourceTree = "<group>"; };
-		5C4DC33C214D547A002777EC /* UIView+layout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+layout.m"; sourceTree = "<group>"; };
 		5C4DC33E214D60E9002777EC /* LLExampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLExampleViewController.h; sourceTree = "<group>"; };
 		5C4DC33F214D60E9002777EC /* LLExampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLExampleViewController.m; sourceTree = "<group>"; };
 		5C4DC342214D61AC002777EC /* LLExampleBasicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLExampleBasicView.h; sourceTree = "<group>"; };
@@ -45,6 +43,8 @@
 		5C4DC349214D82AC002777EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5C4DC34C214DEC43002777EC /* LLExampleRemakeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLExampleRemakeView.h; sourceTree = "<group>"; };
 		5C4DC34D214DEC43002777EC /* LLExampleRemakeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLExampleRemakeView.m; sourceTree = "<group>"; };
+		5CF06D7A218BFEBC008DE60D /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		5CF06D7B218BFEBC008DE60D /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +99,8 @@
 			children = (
 				5C4DC349214D82AC002777EC /* README.md */,
 				5C4DC348214D82AC002777EC /* ViewLayout.podspec */,
-				5C4DC33B214D547A002777EC /* UIView+layout.h */,
-				5C4DC33C214D547A002777EC /* UIView+layout.m */,
+				5CF06D7B218BFEBC008DE60D /* UIView+Layout.h */,
+				5CF06D7A218BFEBC008DE60D /* UIView+Layout.m */,
 			);
 			name = ViewLayout;
 			path = ../../ViewLayout;
@@ -195,8 +195,8 @@
 				5C4DC331214D53D3002777EC /* main.m in Sources */,
 				5C4DC347214D71CD002777EC /* LLExampleUpdateView.m in Sources */,
 				5C4DC344214D61AC002777EC /* LLExampleBasicView.m in Sources */,
+				5CF06D7C218BFEBC008DE60D /* UIView+Layout.m in Sources */,
 				5C4DC34E214DEC43002777EC /* LLExampleRemakeView.m in Sources */,
-				5C4DC33D214D547A002777EC /* UIView+layout.m in Sources */,
 				5C4DC323214D53D1002777EC /* AppDelegate.m in Sources */,
 				5C4DC340214D60E9002777EC /* LLExampleViewController.m in Sources */,
 			);
