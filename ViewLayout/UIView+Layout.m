@@ -218,7 +218,9 @@
 #pragma mark - remove
 - (void)removeAllConstraints{
     UIView *superview = self.superview;
-    NSAssert(superview != nil, @"superview is nil");
+    if (superview == nil) {
+        return;
+    }
     NSMutableArray *deactivate = @[].mutableCopy;
     for (NSLayoutConstraint *constraint in superview.constraints) {
         if (constraint.firstItem && constraint.firstItem == self) {
