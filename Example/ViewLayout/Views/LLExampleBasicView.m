@@ -37,27 +37,27 @@
     int padding = 10;
     
     
-    [greenView layout_top:padding relation:NSLayoutRelationGreaterThanOrEqual toView:superview toAttribute:NSLayoutAttributeTop];
-    [greenView layout_left:padding toView:superview];
-    [greenView layout_bottom:-padding toView:blueView toAttribute:NSLayoutAttributeTop];
-    [greenView layout_right:-padding toView:redView toAttribute:NSLayoutAttributeLeft];
+    [greenView layout_top:padding relation:NSLayoutRelationGreaterThanOrEqual toItem:superview toAttribute:NSLayoutAttributeTop];
+    [greenView layout_left:padding toItem:superview];
+    [greenView layout_bottom:-padding toItem:blueView toAttribute:NSLayoutAttributeTop];
+    [greenView layout_right:-padding toItem:redView toAttribute:NSLayoutAttributeLeft];
     [greenView layout_widthEqualToView:redView];
     [greenView layout_heightEqualToView:redView];
     [greenView layout_heightEqualToView:blueView];
     
-    [redView layout_top:padding toView:superview];
-    [redView layout_left:padding toView:greenView toAttribute:NSLayoutAttributeRight];
-    [redView layout_bottom:-padding toView:blueView toAttribute:NSLayoutAttributeTop];
-    [redView layout_right:-padding toView:superview];
+    [redView layout_top:padding toItem:superview];
+    [redView layout_left:padding toItem:greenView toAttribute:NSLayoutAttributeRight];
+    [redView layout_bottom:-padding toItem:blueView toAttribute:NSLayoutAttributeTop];
+    [redView layout_right:-padding toItem:superview];
     [redView layout_widthEqualToView:greenView];
     
     [redView layout_heightEqualToView:greenView];
     [redView layout_heightEqualToView:blueView];
     
-    [blueView layout_top:padding toView:greenView toAttribute:NSLayoutAttributeBottom];
-    [blueView layout_left:padding toView:superview];
-    [blueView layout_bottom:-padding toView:superview];
-    [blueView layout_right:-padding toView:superview];
+    [blueView layout_top:padding toItem:greenView toAttribute:NSLayoutAttributeBottom];
+    [blueView layout_left:padding toItem:superview];
+    [blueView layout_bottom:-padding toItem:superview];
+    [blueView layout_right:-padding toItem:superview];
     
     [blueView layout_heightEqualToView:greenView];
     [blueView layout_heightEqualToView:redView];

@@ -57,11 +57,11 @@
     [self.movingButton removeAllConstraints];
     [self.movingButton layout_size:CGSizeMake(100, 100)];
     if (self.topLeft) {
-        [self.movingButton layout_left:10 toView:self];
-        [self.movingButton layout_top:10 toView:self];
+        [self.movingButton layout_left:10 toItem:self];
+        [self.movingButton layout_top:10 toItem:self];
     }else{
-        [self.movingButton layout_right:-10 toView:self];
-        [self.movingButton layout_bottom:-10 toView:self];
+        [self.movingButton layout_right:-10 toItem:self];
+        [self.movingButton layout_bottom:-10 toItem:self];
     }
     
     /*

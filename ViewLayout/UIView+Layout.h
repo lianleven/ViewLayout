@@ -34,29 +34,29 @@ NS_ASSUME_NONNULL_BEGIN
 //
 #pragma mark - top, bottom, left, right
 - (NSLayoutConstraint *)layout_top:(CGFloat)constant;
-- (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view;
-- (NSLayoutConstraint *)layout_top:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
-- (NSLayoutConstraint *)layout_top:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant toItem:(id)item;
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_top:(CGFloat)constant relation:(NSLayoutRelation)relation toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
 
 - (NSLayoutConstraint *)layout_bottom:(CGFloat)constant;
-- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toView:(UIView *)view;
-- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
-- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toItem:(id)item;
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_bottom:(CGFloat)constant relation:(NSLayoutRelation)relation toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
 
 - (NSLayoutConstraint *)layout_left:(CGFloat)constant;
-- (NSLayoutConstraint *)layout_left:(CGFloat)constant toView:(UIView *)view;
-- (NSLayoutConstraint *)layout_left:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
-- (NSLayoutConstraint *)layout_left:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant toItem:(id)item;
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_left:(CGFloat)constant relation:(NSLayoutRelation)relation toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
 
 - (NSLayoutConstraint *)layout_right:(CGFloat)constant;
-- (NSLayoutConstraint *)layout_right:(CGFloat)constant toView:(UIView *)view;
-- (NSLayoutConstraint *)layout_right:(CGFloat)constant toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
-- (NSLayoutConstraint *)layout_right:(CGFloat)constant relation:(NSLayoutRelation)relation toView:(UIView *)view toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant toItem:(id)item;
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
+- (NSLayoutConstraint *)layout_right:(CGFloat)constant relation:(NSLayoutRelation)relation toItem:(id)item toAttribute:(NSLayoutAttribute)toAttribute;
 
 - (NSLayoutConstraint *)layout_constant:(CGFloat)constant
                               attribute:(NSLayoutAttribute)attribute
                                relation:(NSLayoutRelation)relation
-                                 toView:(UIView *)view
+                                 toItem:(id)item
                             toAttribute:(NSLayoutAttribute)toAttribute
                              multiplier:(CGFloat)multiplier;
 
